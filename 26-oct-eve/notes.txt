@@ -1,0 +1,145 @@
+ES -> Ecma Script is blueprint for JavaScript
+
+90s -> LiveScript -> Netscape
+	JScript -> Microsoft
+
+Common JS -> prototypes
+ES -> class
+
+
+Node Js:
+is a runtime env for the js, node js is an interpreter 
+
+node js is not a lang
+node js is not a library/framework
+
+
+with the help of node js we can directly create and run the .js files 
+
+node js uses the same js engine as used by chrome, i.e. v8 engine 
+
+modules: collection of functions, classes, properties etc etc 
+
+two types of modules:
+1. pre-defined : already available in the node js : fs, http, os, path
+
+ 
+2. user defined / custom : developed by the developers 
+
+
+fs module:  
+
+require(name) // #include, import statement
+
+const fs = require("fs"); // it will return the reference of the mentioned module 
+
+fs.writeFile();
+fs.writeFileSync();
+
+fs.readFile();
+fs.readFileSync();
+
+mymodule -> f1, f2
+
+const myModule = require("mymodule");
+
+myModule.f1();
+
+myModule.f2();
+
+
+const fs = require("fs");
+
+console.log("Before writing into file");
+fs.writeFile("my-file.txt","this is dummy file",()=>{
+    console.log("write op completed");
+});
+console.log("after writing file ");
+
+const fs = require("fs");
+
+console.log("Before writing into file");
+fs.writeFileSync("new-file.txt","this is new dummy file");
+console.log("write op completed");
+console.log("after writing file ");
+
+const fs = require("fs");
+
+fs.readFile("my-file.txt",(error, data)=>{
+    console.log(data.toString());
+    
+});
+
+console.log("after reading file");
+
+
+const fs = require("fs");
+
+fs.readFile("my-file.txt",(error, data)=>{
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(data.toString());
+    }
+    
+    
+});
+
+console.log("after reading file");
+
+
+const fs = require("fs");
+
+const data = fs.readFileSync("my-file.txt");
+
+console.log(data.toString());
+
+console.log("after reading file");
+
+
+http module: it will provide functions to implement a server 
+
+port number and ip address
+
+local: 127.0.0.1 / localhost
+
+127.0.0.1:7654
+
+port : to uniquely identify the process running on a server
+
+e-commerce: 7654 -> 127.0.0.1:7654
+social media: 8100 -> 127.0.0.1:8100
+
+socket : ip + port 
+
+3306, 8080, 8090, 3000, 4200, 8000
+
+6500
+
+const http = require("http");
+
+const server = http.createServer((request,response)=>{
+    response.write("Hello World");
+    response.end();
+}); 
+// when we will run this js file a new server will be created 
+// but this callback will not be executed at that time
+// the callback will only be executed when there is a request from a client onto this server 
+// this callback is used to process the request and generate the response 
+// with the createServer(), a server will be created only it will not get started 
+
+server.listen(6500); // it will start the server and
+//  will continuously listen for the requests on the mentioned port number
+
+
+user defined modules:
+
+.js file -> contains functions 
+
+
+
+
+
+
+

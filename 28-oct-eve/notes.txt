@@ -1,0 +1,23 @@
+API -> express -> database connectivity 
+
+CRUD -> Create Read Update Delete
+
+
+npm i express mysql2 
+npm I express
+npm I MySQl2
+
+connections with the database
+1. for every request create a new connection 
+2. connection pool : it is like a pool which is containing ready made connections 
+		    connection limit : 50 connections 1 49
+		    queue limit : 5 
+
+mysql2 createPool()
+mysql2/promise createPool() => return Promise 
+
+
+Sequelize
+Prisma ORM
+
+

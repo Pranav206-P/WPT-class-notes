@@ -1,0 +1,148 @@
+<style>
+selector{
+	property:value;
+
+}
+</style>
+
+types of selectors:
+
+1. tag selector : name of the tag, this selector will select all the matching tags 
+
+2. id selector : id is used to identify the elements uniquely
+	#head-1{
+                color: red;
+            }
+	 <h1 id="head-1">Hello</h1>
+<html>
+    <head>
+        <title>Css demo</title>
+        <style>
+            #head-1{
+                color: red;
+            }
+            #head-2{
+                color: green;
+            }
+            #head-3{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="head-1">Hello</h1>
+        <h1 id="head-2">Heading 2</h1>
+        <h1 id="head-3">Heading 3</h1>
+        
+    </body>
+</html>
+
+3. class selector: when multiple elements has to be identified commonly 
+<html>
+    <head>
+        <title>Css demo</title>
+        <style>
+           .blue-font{
+            color: blue;
+           }
+        </style>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <h1 class="blue-font">Heading 2</h1>
+        <h1>Heading 3</h1>
+        <p class="blue-font">para 1</p>
+        <p>para 2</p>
+        <span>span 1</span>
+        <span>span 2</span>
+        <span class="blue-font">span 3</span>
+        <!-- 2nd h1, 1st p, 3rd span blue -->
+    </body>
+</html>
+
+* universal selector
+
+*{
+
+
+}
+
+id > class > tag selector > *
+
+
+types of css: based on where we are writing the css code
+
+1. internal css: css written within the same html file inside of the style tag 
+
+2. external css: css written outside of the html, inside of a .css file, we should then link the external css with the html
+
+3. inline css: css written directly inside of a tag using style attribute
+<p style="color: red;">This is para 1</p>
+
+
+inline > internal > external
+
+
+p{
+                font-size: 24px;
+                font-family: 'Segoe Ui Light';
+                font-weight: 900;
+                /* font-style: italic; */
+                /* font-variant: small-caps; */
+                text-transform: capitalize;
+		text-decoration: line-through;
+            }
+
+div -> to create a division/section on a web page
+
+<html>
+
+<head>
+    <title>Css demo</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            color: white;
+            border-width: 10px;
+            border-color: black;
+            border-style: solid;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h3>This is heading</h3>
+        <p>this is dummy para</p>
+    </div>
+</body>
+
+</html>
+
+
+two types of spaces are there :
+
+1. internal : padding property -> padding-left padding-top padding-right padding-bottom padding 
+2. external : margin property -> margin-left margin-right margin-bottom margin-top margin
+
+Different ways of applying the colors
+
+1. name of color
+2. hexadecimal value : #3b5998 #671t43
+3. rgb() function: rgb(0-255, 0-255, 0-255)
+
+
+
+
+
+
+
+
+
+
+
+

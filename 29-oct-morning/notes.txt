@@ -1,0 +1,78 @@
+design pattern -> MVC Model View Controller 
+
+Model -> Entities : Customer, order, Product, Cart 
+View -> UI/Frontend : React
+
+Controller -> it will be a function that will accept the request and generate response only
+
+index.js -> only to start the server 
+
+layers -> controllers folder -> one controller file per entity 
+service
+dao
+
+CustomerController.js
+AdminController.js
+
+
+demo.js:
+
+let obj=0;
+
+...
+
+obj = 100;
+
+export default obj;
+
+note: while importing the above type of property (exported using export default) we don't need to write {exact property name}
+
+import myObj from '...path';
+
+Nest Js 
+
+
+login authentication:
+
+frontend :login form 
+
+
+Self service restaurant:
+payment counter
+food counter
+
+frontend/client : login form -> server will run login api 
+		login api -> it will read username and password from the req body 
+	                     compare these username and password with the db values
+	                     1. Matched : {message:"login successful", token}
+			     2. Didn't matched  : {message:"invalid credentials"}
+
+
+frontend -> call delete api -> add/send a token in the request -> 
+backend -> middleware -> check if req is having a token or not  -> controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+JavaScript : Using JS we can execute logics in the client side/browser 
+
+eg: calculations, decisions, form validations, animations 
+
+LiveScript early 90s -> JavaScript 
+
+
+JS code will be executed in the browser
+Browsers are having one component named as JS Engine / interpreter
+
+For JS no compiler is there, so simply write the code and execute it in the browser
+
+no type safety in JS 
+
+there are data types in js but at the runtime only 
+number, string, Boolean 
+
+a=5; 
+
+a="hello";
+
+
+

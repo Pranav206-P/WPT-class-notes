@@ -1,0 +1,11 @@
+3 different functions: generics
+
+int sum(int a, int b){}
+
+float floatSum(float a, float b){}
+
+<student>
+	<id></id>
+	<name></name>
+	<marks></marks>
+</student>

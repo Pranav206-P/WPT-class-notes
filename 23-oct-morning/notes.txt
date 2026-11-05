@@ -1,0 +1,49 @@
+position: static | relative | absolute | fixed
+
+top:
+left:
+right:
+bottom: 
+
+flex property
+
+flex: flexible
+
+<html>
+
+<head>
+    <title>
+        My Page
+    </title>
+    <style>
+        #container {
+            display: flex; 
+            gap: 20px;
+        }
+        #box1{
+            background-color: red;
+        }
+        #box2{
+            background-color: blue;
+        }
+        #box3{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box1"> div 1 </div>
+        <div id="box2"> div 2 </div>
+        <div id="box3"> div 3 </div>
+    </div>
+
+</body>
+
+</html>
+
+
+ justify-content: center ; align the flex items on the main axis/ horizontal 
+
+

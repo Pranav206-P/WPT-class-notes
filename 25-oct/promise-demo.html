@@ -1,0 +1,59 @@
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+
+
+        async function sum(a, b) {
+            console.log("started calculating sum...");
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (a > 100 || b > 100) {
+                        reject("Upper limit has been crossed. Values should be less than 100.");
+                    }
+                    else {
+                        var c = a + b;
+                        resolve(c);
+                    }
+
+                }, 1500);
+            });
+        }
+
+        async function factorial(num) {
+            console.log("started calculating factorial...");
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    var fact = 1;
+                    for (var i = 1; i <= num; i++) {
+                        fact = fact * i;
+                    }
+                    resolve(fact);
+                }, 3000);
+            });
+        }
+
+        
+       async function handlPromise(){
+            try {
+               const sumResult = await sum(2,3);
+               console.log("sum is", sumResult);
+               const factResult = await factorial(sumResult);
+               console.log("factorial is", factResult);
+
+            } catch (error) {
+                console.log(error);
+            }
+       }
+
+       handlPromise();
+
+
+
+    </script>
+</body>
+
+</html>

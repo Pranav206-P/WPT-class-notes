@@ -1,0 +1,117 @@
+types of modules:
+
+1. predefined: already there in node js
+2. user defined: developer
+3. 3rd party module: a module given by another org, and we have to install them manually
+
+   npm: node package manager 
+
+   npm i/install module/package-name	
+
+   npm uninstall module-name
+
+note: when we install any 3rd party module there will always be a folder node_modules, 2 files : package.json, package-lock.json
+
+package.json: a node application must always have a package.json 
+it will be containing certain configurations related to the project
+name, version, author, description, git repo, lic, main file/starting point etc
+
+npm init
+
+d1: 5-10 
+d2: 5
+d3: 
+
+whenever we have installed a 3rd party module, we should keep its entry in package.json file in dependencies key also
+
+node_modules: this folder will actually contain the js src code downloaded for that 3rd party module
+
+why installed package name has to be there in package.json: node_modules is not practically possible to transfer it to git repo, may be to another system
+
+we will move entire src code except the node_modules 
+now in a new system where we have the src code but not node_modules
+we should run a command inside of the project as : npm i/install, now this npm i will read the package.json file specifically it will read dependencies key and will install all the dependencies mentioned 
+
+package-lock.json: 
+
+
+predefined   
+user defined
+3rd party -> local global
+
+two types of 3rd party modules:
+
+1. local module (dependency): module which is installed within a project/inside of a project 
+	p1-express p2 p3
+	
+	a module which is providing a predefined code base in the form of functions, properties, classes etc etc, that has to be installed locally 
+
+	npm i package-name 
+	
+
+2. global module: module which is installed globally somewhere in a shared location such that all the projects should make use of this global module
+
+    npm i/install -g package-name
+	
+	a module/package which is providing a tool should be installed globally 
+	
+	npm i -g nodemon
+
+
+require() -> common js
+
+import statement -> es
+
+http -> createServer 
+
+import {createServer} from "http";
+
+mymodule -> sum, product
+
+import {sum, product} from "./mymodule.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,256 @@
+JS Engine: interpreter 
+
+not a type safe lang
+
+typescript 
+
+For JS everything is an object. For eg : data (numeric, string, Boolean, array), web page, all the tags, browser window, browser tab 
+
+some of the predefined objects in JS:
+document: that represents the entire web page
+console: represents the console in browser dev tools
+window: represents the browser window
+
+hello world 
+
+<script>
+	document.write("hello world");
+</script>
+
+
+<html>
+    <head>
+        <title>Js demo</title>
+    </head>
+    <body>
+        
+        <script>
+            document.write("hello world");
+            console.log("hello console");
+            window.alert("hii user");
+        </script>
+    </body>
+</html>
+
+
+ a = 4; number
+ console.log(a);
+
+data types are also dynamic
+
+ a = 4;
+            console.log(typeof a); // number 
+            console.log(a); // 4
+            a = "hello";
+            console.log(typeof a);
+            console.log(a);
+
+b = true;
+         console.log(typeof b);
+         console.log(b);
+   obj = null;
+          console.log(typeof obj); // object
+          
+          obj1 = undefined;
+          console.log(typeof obj1); // undefined 
+
+operators
+
+arithmetic: + - * / % **
+
+console.log(`sum of ${a} and ${b} is ${c}`);
+
+relational : < > <= >= == != ===
+
+logical : || && !
+
+conditional : ? :
+
+ a = 70;
+
+         b = 160;
+
+         c = a > b ? a : b;
+
+
+101 -> Rohan
+102 -> Sohan
+103 -> Mohan
+
+not found
+
+if - else
+if else if ladder
+nested if
+switch case 
+
+
+switch(expression/variable){
+	case v1: stmt; break;
+	default: stmt;
+}
+
+loops:
+
+while(condition){
+	stmt;
+}
+
+i=1;
+          while(i<=10){
+            console.log(i);
+            i++;
+          }
+
+for(initialization; condition; inc/dec){
+	stmt
+}
+
+for(i=1; i<=10; i++){
+            console.log(i);
+          }
+
+console.log("***");
+
+
+300 stars
+
+*****
+*****
+
+for (j = 1; j <= 10; j++) {
+            for (i = 1; i <= 5; i++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+
+
+
+
+function: it is a collection of statements those are grouped together 
+
+reusability
+modularity
+
+c/c++/java
+return-type function-name(arguments){
+
+	return data;
+}
+
+js:
+function name(arguments){
+	
+	return data;
+}
+
+JS has 3 keywords to declare the variable
+var let const 
+
+note: in the absence of any of the above keyword in the declaration then we cannot say that property is local or global, because that property will become the property of the window object even if it is declared inside the function also 
+
+and we can access it everywhere 
+
+var: we can specifically provide local or the global 
+
+  var a = 5;
+
+        function show(){
+            
+            console.log("inside show a=", a);
+            
+        }
+
+        show();
+        console.log("outside show a=",a);
+
+        function show(){
+            var a = 5;
+            console.log("inside show a=", a);
+            
+        }
+
+        show();
+        console.log("outside show a=",a);
+
+
+redeclaration is possible with the var keyword
+
+     var a = 5;
+        console.log(a);
+        var a = 8;
+        console.log(a);
+
+for the variables declared using var keyword are getting hoisted 
+
+JS engine first of all even before code execution, is going to read the entire src code and it will look for the declarations, and then it move all those declarations at the top of the code and then finally execution will be started 
+
+This process is hoisting 
+
+we have written this code:
+
+  console.log(a);
+    var a = 10;
+
+but for js engine it is in this way:
+var a;
+ console.log(a);
+ a = 10;
+
+let: let keyword variables are having block scope
+
+function show(){
+        if(true){
+            let x = 5;
+            console.log("inside if x=",x); // only accessible inside if 
+        }
+        console.log("outside if x=",x); // not accessible here 
+    }
+
+    show();
+
+using let keyword we cannot redeclare the variable
+
+hoisting will be there for the let variables but there is rule that we cannot access let variable before their initialization 
+
+const: is exactly same as let, but only the difference is that we cannot change the value of const variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+node js-> http module createServer((req, res)=>{
+});
+
+6000
+127.0.0.1:6000 -> base url
+
+www.myapp.com -> base url 
+www.myapp.com/login -> sub url
+	     /signup
+	     /search
+	     /profile
+	
+express: it is a framework using which we can develop backend/server 
+
+npm init -y
+
+npm i express
+
+logic: onto which url, what processing will be there and what response should be there 
+
+routing -> GET -> app.get()	
+	   POST -> app.post()
+	   PUT -> app.put()
+	   DELETE -> app.delete()
+
+base url -> get request -> respond with hello world
+app.get(url1, (request, response)=>{
+
+});
+
+app.get(url2, (request, response)=>{
+
+});
+
+import express from "express";
+// const express = require("express");
+
+const app = express(); // it will create an express application
+// and this express application is nothing but your server
+
+//127.0.0.1:6500/
+app.get("/",(request, response)=>{
+    response.send("Hello World");
+});
+
+app.get("/login", (request, response)=>{
+    response.send("welcome to login");
+});
+
+app.get("/sum", (request, response)=>{
+    var x = 4;
+    var y = 7;
+    var z = x + y;
+    response.send(`Sum is ${z}`);
+});
+
+app.listen(6500);
+
+
+response : status 
+	   data: body 
+	   header: meta-data
+
+
+import express from "express";
+// const express = require("express");
+
+const app = express(); // it will create an express application
+// and this express application is nothing but your server
+
+//127.0.0.1:6500/
+app.get("/",(request, response)=>{
+    response.status(200).send({message:"Hello world"});
+});
+
+app.get("/login", (request, response)=>{
+    response.send("welcome to login");
+});
+
+app.get("/sum", (request, response)=>{
+    var x = 4;
+    var y = 7;
+    var z = x + y;
+    response.send(`Sum is ${z}`);
+});
+
+app.listen(6500);
+
+how to send data from a client to the server:
+
+1. Data can be sent on the url : url parameter
+http://127.0.0.1:6500/sum/3/5 : 5 and 8 url parameters
+
+2. 
+
+
+
+

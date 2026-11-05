@@ -1,0 +1,258 @@
+Why do we need callback functions:
+
+To make any process async we need the help of callback functions
+
+callback functions never gets executed immediately 
+they will be executed later after some event has been fired for eg: timer completed, server sent response ... etc
+
+task: read data from db and send that data in the response
+
+readDataFromDbAsync(()=>{
+	sendResponse();
+}); // async 
+
+
+
+writeDataInDbAync(); // async 
+
+
+task2: read data from a db table and write it into another table
+
+readDataFromDbAsync(()=>{
+	writeDataInDbAync(()=>{
+		sendResponse();
+	});
+});
+
+nesting of callback functions 
+
+
+
+job -> sync 
+library support -> async 
+
+async:
+s1 
+s2
+s3
+
+
+when multiple async functions are there and we have to execute them synchronously then we have to go with the nesting of the callback functions.
+But nesting will make code much difficult to read, maintain and debug
+Nesting of callback is termed as callback hell
+
+we should always avoid the callback hell but multiple async functions are there and we have to execute them synchronously
+
+
+To avoid the callback hell we can make use of the promises 
+
+1. For any of the operation/logic we have to create a promise, promise will remain in pending state
+ 
+2. Now after the execution of the operation either the promise will be fulfilled/resolved or it will be rejected.
+
+3. Now on the basis of the promise state, we can take certain actions 
+
+steps of dealing with promises in JS practically:
+
+Step 1: Create a promise 
+
+         var myPromise = new Promise(callback-function/promise-executor);
+ 
+  var myPromise = new Promise((resolve, reject)=>{
+	var num = 4;
+	if(num%2===0){
+		resolve();
+	}
+	else{
+		reject();
+	}
+  });
+
+while creating a promise, based on the logic we as developer has to decide when to resolve the promise and when to reject the promise 
+
+step 2: execute the promise 
+
+step 3: promise handling : based on the promise state we can perform certain operations 
+
+to handle the promise JS has provided 2 functions
+1. then() -> in case of promise resolution
+2. catch() -> incase of promise rejection
+
+promise-object
+.then(()=>{
+
+})
+.catch(()=>{
+
+});
+
+var myPromise = new Promise((resolve, reject)=>{
+                var n = 7;
+                if(n%2===0){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            });
+
+            console.log(myPromise);
+            
+            myPromise
+            .then(()=>{
+                console.log("Promise fulfilled: no. is even");
+            })
+            .catch(()=>{
+                console.log("Promise rejected: no. is not even");
+            });
+
+
+  var myPromise = new Promise((resolve, reject)=>{
+                var n = 6;
+                // we might be having certain data here in this executor function 
+                // and that is needed by then or catch
+                if(n%2===0){
+                    resolve("Promise fulfilled: no. is even");
+                }
+                else{
+                    reject("Promise rejected: no. is not even");
+                }
+            });
+
+            console.log(myPromise);
+            
+            myPromise
+            .then((arg)=>{
+                console.log(arg);
+            })
+            .catch((errorMsg)=>{
+                console.log(errorMsg);
+            });
+
+
+     function checkEven(num) {
+            return new Promise((resolve, reject) => {
+                // we might be having certain data here in this executor function 
+                // and that is needed by then or catch
+                if (num % 2 === 0) {
+                    resolve("Promise fulfilled: no. is even");
+                }
+                else {
+                    reject("Promise rejected: no. is not even");
+                }
+            });
+        }
+
+
+        checkEven(4).then((arg) => {
+            console.log(arg);
+        })
+            .catch((errorMsg) => {
+                console.log(errorMsg);
+            });
+
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+
+
+        function sum(a, b) {
+            console.log("started calculating sum...");
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (a > 100 || b > 100) {
+                        reject("Upper limit has been crossed. Values should be less than 100.");
+                    }
+                    else {
+                        var c = a + b;
+                        resolve(c);
+                    }
+
+                }, 1500);
+            });
+        }
+
+        function factorial(num) {
+            console.log("started calculating factorial...");
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    var fact = 1;
+                    for (var i = 1; i <= num; i++) {
+                        fact = fact * i;
+                    }
+                    resolve(fact);
+                }, 3000);
+            });
+        }
+
+        
+        sum(2, 3)
+            .then((sumResult) => {
+                console.log("Sum is ", sumResult);
+                return factorial(sumResult);
+            })
+            .then((factResult)=>{
+                console.log("factorial is ", factResult);
+                return square(factResult);
+            })
+            .then(()=>{
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+Two ways of handling the promises:
+1. then catch functions
+2. async and await keywords
+
+await keyword: it will make rest of the statements wait for the current function to resolve the promise / complete its execution , when the promise has been resolved it will also return the resolved value 
+
+async keyword: it has to be there in the function signature of such a function in which await keyword is used.
+We can write async keyword on the signature of a function that is returning promise 
+
+sum(); // return Promise
+factorial(); // return Promise
+square(); // return Promise
+
+-> whenever we are calling a function that returns a promise 
+
+
+
+function handlePromise(){
+	
+	try{
+		var rs = await sum(2,3); // rs = 5
+		var factResult = await factorial(rs);
+		var sqResult = await square(factResult);
+	} catch(error){
+		
+	}
+
+	
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 

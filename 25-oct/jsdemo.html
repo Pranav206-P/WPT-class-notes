@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>js demo</title>
+</head>
+
+<body>
+
+    <script>
+
+        // sum-> 1.5 sec factorial-> 3 sec square -> 2 sec
+        // sum -> factorial -> square
+
+        console.log("started calculating sum...");
+        setTimeout(() => {
+            var x = 3;
+            var y = 2;
+            var z = x + y;
+            console.log("Sum is", z);
+
+            console.log("started calculating factorial...")
+            setTimeout(() => {
+                var fact = 1;
+                for (var i = 1; i <= z; i++) {
+                    fact = fact * i;
+                }
+                console.log("Factorial is", fact);
+
+                console.log("started calculating square...")
+                setTimeout(() => {
+                    var sq = fact * fact;
+                    console.log("Square is", sq);
+                }, 2000);
+            }, 3000);
+        }, 1500); // async
+
+        // callback hell
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

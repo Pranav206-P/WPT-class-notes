@@ -1,0 +1,158 @@
+
+1. data on the url parameter: request.params 
+    
+
+2. Request body: the data which client will send to the server 
+   note: with GET method we cannot work with the request body
+	 POST
+
+client: 
+fetch("http://127.0.0.1:6500/sum", {method:'POST', body:{x:3,y:7}});
+
+Response Body: the data which a server will send to a client 
+
+by default the express server will not process req body and always it will give undefined for request.body property 
+reason: we can have different different type of data in the request body
+
+text/json/xml/html/javascript
+
+middleware: is a function that will be called before processing of the request, and it can take a decision that this req should be processed or not 
+we can pass any number of middlewares on a single route
+
+currently: 
+request arrived -> (req, res)=>{}
+
+middleware:
+request arrived -> middleware -> (req, res) => {}
+
+app.get(url, middleware-function(){}, (req, res)=>{});
+
+app.get(url, m1 -> req res next, m2, m3, (req, res)=>{});
+
+app.get(url, (req, res, next)=>{}, (req, res)=>{});
+
+app.get("/middleware-demo", (req, res, next)=>{
+    console.log("control is in middleware...");
+    next();
+}, (req, res)=>{
+    console.log("req started processing...");
+    res.send({message:"Dummy response"});
+});
+
+
+if multiple routes need to use the same middlware:
+import express from "express";
+// const express = require("express");
+
+const app = express(); // it will create an express application
+// and this express application is nothing but your server
+
+//127.0.0.1:6500/
+
+const myMiddleware = (req, res, next)=>{
+    console.log("control is in middleware...");
+    next();
+};
+
+app.get("/", myMiddleware, (request, response) => {
+    response.status(200).send({ message: "Hello world" });
+});
+
+app.get("/login",myMiddleware, (request, response) => {
+    response.send("welcome to login");
+});
+
+// /sum/3/5
+app.get("/sum/:a/:b",myMiddleware, (request, response) => {
+    // express is going to prepare an object of all the url parameters
+    // {a:3, b:5}
+    //
+    const paramsData = request.params; // url params
+    var z = parseInt(paramsData.a) + parseInt(paramsData.b);
+    response.send({ sum: z });
+});
+
+app.get("/factorial/:num", (request, response) => {
+    const n = parseInt(request.params.num); // request.params = {num:4}
+    if (n < 0) {
+        response.status(400).send({message:"Negative values are not allowerd"});
+    }
+    else {
+        let fact = 1;
+        for (var i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        response.send({ factorial: fact });
+    }
+
+});
+
+app.post("/add", (request, response)=>{
+    console.log(request.body);
+    response.send({message:"add response"});
+});
+
+app.get("/middleware-demo", myMiddleware, (req, res)=>{
+    console.log("req started processing...");
+    res.send({message:"Dummy response"});
+});
+
+app.listen(6500);
+
+
+
+now we have to make use of the same middleware on each and every route of the application
+
+
+solution 1: mention the reference of middleware function on each and every route 
+
+solution 2: app.use(myMiddleware);
+
+
+express.json(): express.json() is itself not a middleware function 
+it will return a middleware function that will process json data in the request body 
+
+const jsonMiddleware = express.json()
+
+
+factorial -> number in the request body
+/calculate-bill -> req body {rate:766, qty:7}-> result total amount, discount applied, net amount  
+
+3000 - 7000 7%
+7001 - 15000 10%
+>15000 15%
+
+/circle -> req body radius -> area & perimeter
+
+API: Application Programming Interface 
+
+FOr using the functionalities/services of one application into another we will make use of API
+
+Indore -> Mumbai indigo
+
+indigo website 
+indigo mobile app
+MakeMyTrip
+goibibo
+yatra 
+
+social media: site html,css,js React, java, db- MySQL APIs
+
+, android app-> Frontend/ui 
+
+, ios app -> Frontend/ui
+
+backend -> APIs
+youtube-> website, android, ios
+flipkart
+amazon
+
+
+
+
+
+
+
+
+
+

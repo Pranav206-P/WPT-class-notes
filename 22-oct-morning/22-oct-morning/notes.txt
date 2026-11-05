@@ -1,0 +1,127 @@
+rows and columns -> table
+table box -> rows -> columns
+
+<table>
+	<tr>
+		<td>id</td>
+		<td>Name</td>
+		<td>Phone</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Nitin</td>
+		<td>78888111</td>
+
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Suresh</td>
+		<td>8999911</td>
+
+	</tr>
+</table>
+
+by default the table borders has been set to 0
+
+cellpadding: spaces inside of the cell
+cellspacing: spaces outside of the cell
+
+<table border="1" cellpadding="10" cellspacing="0">
+
+   <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nitin</td>
+            <td>78888111</td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Suresh</td>
+            <td>8999911</td>
+
+        </tr>
+    </table>
+
+semantic tags : tags which are doing the same thing but provides a better code readability
+
+<table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nitin</td>
+                <td>78888111</td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Suresh</td>
+                <td>8999911</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+forms: 
+<form> tag is not used to display the form input field
+<form> tag will collect the entire form data and can submit it to the server
+
+<form action="https://www.mydataserver.com" method="POST">
+
+</form>
+
+action: contain a url of the server where the data has to be submitted
+method: value of request method 
+
+in the absence of any of the request method then by default GET method will be considered 
+
+3 types of buttons:
+1. plain button: its a plain button which doesn't have any predefined functionality, its the developer only who has to define its functionality
+<input type="button" value="Click me">
+
+2. submit button: its functionality is predefined, it is used to submit the form
+<input type="submit">
+
+3. reset button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

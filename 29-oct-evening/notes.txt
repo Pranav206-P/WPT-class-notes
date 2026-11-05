@@ -1,0 +1,26 @@
+notes
+
+token: JWT : Json Web Token : token can contain the data as well in the form of json object
+
+3 parts
+header: details of algo
+payload: data
+signature:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+
+jsonwebtoken -> sign() verify()
+
+in the request where we should pass the token
+
+1. url X
+2. body X GET X 
+3. header -> request header that will be containing meta data for the request 
+	Header also exists in key and value 
+	Authorization: <type> <credential>
+		       <Basic|Digest|Bearer>
+			Bearer encrypted_token
+			if crendential is a JWT then type must be Bearer 
+
+
+

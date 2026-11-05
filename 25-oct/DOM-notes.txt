@@ -1,0 +1,305 @@
+DOM -> Document Object Model 
+
+Whenever a web page gets loaded in the browser, it will prepare a tree like structure for all the tags
+
+document ->  its an object of the DOM
+
+
+DOM Manipulation:
+
+1. We can create a new element 
+2. We can remove the existing elements
+3. We can change the content of elements
+4. We can get/read the content of elements 
+5. We can change the style also
+6. We can change the attribute value
+7. We can get/read the attribute value
+
+<html>
+    <head>
+        <title>My Page</title>
+    </head>
+    <body>
+      
+        <p id="para">This is para demo</p>
+
+        <script>
+           var obj = document.getElementById("para");
+           console.log(obj);
+           console.log(obj.innerHTML);
+           
+        </script>
+    </body>
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+</head>
+
+<body>
+
+    <p id="para">This is para demo</p>
+
+    <button onclick="getContent()">Get Content</button>
+
+    <script>
+
+        function getContent() {
+            var obj = document.getElementById("para");
+            console.log(obj);
+            console.log(obj.innerHTML);
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+</head>
+
+<body>
+
+    <p id="para">This is para demo</p>
+
+    <button onclick="changeContent()">Change Content</button>
+
+    <script>
+
+        function changeContent() {
+            var obj = document.getElementById("para");
+            obj.innerHTML = "Updated content";
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+    <style>
+        #para{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="para">This is para demo</p>
+
+    <button onclick="changeStyle()">Change Style</button>
+
+    <script>
+
+        function changeStyle() {
+            var obj = document.getElementById("para");
+            obj.style.color = "red";
+            obj.style.backgroundColor = "white";
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+    <style>
+        #para{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="para">This is para demo</p>
+
+    <button onclick="removePara()">Remove Para</button>
+
+    <script>
+
+        function removePara() {
+            var obj = document.getElementById("para");
+            obj.remove();
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+    <style>
+        #para{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="para">This is para demo</p>
+
+    <div id="container">
+
+    </div>
+
+    <button onclick="generateHeading()">Generate Heading</button>
+
+    <script>
+
+        function generateHeading() {
+            var h1Obj = document.createElement("h1");
+            h1Obj.innerHTML = "Dynamic Heading";
+            var container = document.getElementById("container");
+            container.appendChild(h1Obj);
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+    <style>
+        #para {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="password" placeholder="Enter Password" id="password-field">
+    <button onclick="togglePassword()" id="btn">Show</button>
+
+    <script>
+
+        function togglePassword() {
+            var passwordField = document.getElementById("password-field");
+            var button = document.getElementById("btn");
+
+            if (button.innerHTML === "Show") {
+                passwordField.setAttribute("type", "text");
+                button.innerHTML = "Hide";
+            }
+            else{
+                passwordField.setAttribute("type", "password");
+                button.innerHTML = "Show";
+            }
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+
+<head>
+    <title>My Page</title>
+    <style>
+        #para {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="password" placeholder="Enter Password" id="password-field">
+    <button onclick="togglePassword()" id="btn">Show</button>
+
+    <script>
+
+        function togglePassword() {
+            var passwordField = document.getElementById("password-field");
+            var button = document.getElementById("btn");
+
+            if (button.innerHTML === "Show") {
+                passwordField.setAttribute("type", "text"); // getAttribute(attr-name);
+                button.innerHTML = "Hide";
+            }
+            else{
+                passwordField.setAttribute("type", "password");
+                button.innerHTML = "Show";
+            }
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<html>
+    <head></head>
+    <body>
+        <input type="text" placeholder="Enter name" id="name-field">
+        <button onclick="getName()">Submit Name</button>
+
+        <script>
+            function getName(){
+                var nameField = document.getElementById("name-field");
+                console.log(nameField.value);
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <head></head>
+    <body>
+        <input type="text" placeholder="Enter 1st number" id="field-1">
+        <input type="text" placeholder="Enter 2nd number" id="field-2">
+        <button onclick="add()">Add</button>
+        <h3 id="result"></h3>
+
+        <script>
+            function add(){
+                var n1 = parseInt(document.getElementById("field-1").value); // string "3"
+                var n2 = parseInt(document.getElementById("field-2").value); // "5"
+                var n3 = n1 + n2;
+                document.getElementById("result").innerHTML = "Sum is "+n3;
+            }
+        </script>
+    </body>
+</html>
+
+
+
